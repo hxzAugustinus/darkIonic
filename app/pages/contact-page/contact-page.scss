@@ -1,0 +1,46 @@
+@import 'app.variables';
+
+.contact {
+  ion-slide {
+    div {
+      height: 22rem;
+      background-size: 100% 120%;
+      background-repeat: no-repeat;
+
+      h2 {
+        position: absolute;
+        width: 100%;
+        font-size: 1.8rem;
+        bottom: 2rem;
+      }
+    }
+  }
+
+  ion-list {
+    background-color: rgba(232, 222, 222, 0.5);
+    margin: 0;
+    padding-bottom: 1px;
+    nav {
+      padding: 14px;
+    }
+    ion-col {
+      padding: 10px;
+      p {
+        font-size: 1.7rem;
+      }
+    }
+  }
+
+  .swiper-container-horizontal > .swiper-pagination .swiper-pagination-bullet {
+    margin: 0 2px 0 3px;
+  }
+
+  .swiper-pagination-bullet {
+    background: #fff;
+    opacity: .3;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+}

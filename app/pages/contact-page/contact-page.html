@@ -1,0 +1,55 @@
+<ion-navbar *navbar>
+    <ion-title>
+        Contact
+    </ion-title>
+</ion-navbar>
+
+<ion-content class="contact">
+    <ion-refresher  (ionRefresh)="doRefresh($event)">
+           <ion-refresher-content  pullingIcon="arrow-dropdown"   refreshingSpinner="circles">
+           </ion-refresher-content>
+    </ion-refresher>
+    <section>
+        <ion-slides  loop="true"  pager="true"  >
+            <ion-slide *ngFor="let hot of tops">
+                <div [style.background-image]="hot.image">
+                    <h2>{{hot.title}}</h2>
+                </div>
+            </ion-slide>
+        </ion-slides>
+    </section>
+
+    <ion-list>
+        <nav>今日热闻</nav>
+        <ion-card *ngFor="let item of list" (click)="toContent(item.id)">
+            <ion-row>
+                <ion-col width-75>
+                    <p>{{item.title}}</p>
+                </ion-col>
+                <ion-col width-25>
+                    <img [src]="item.images[0]" style="width: 100%">
+                </ion-col>
+            </ion-row>
+        </ion-card>
+    </ion-list>
+
+    <div>
+        <ion-list *ngFor="let dayDate of past">
+            <nav>{{ dayDate.date | dateFormat}}</nav>
+            <ion-card  *ngFor="let item of dayDate.stories"     (click)="toContent(item.id)">
+                <ion-row>
+                    <ion-col width-75>
+                        <p>{{item.title}}</p>
+                    </ion-col>
+                    <ion-col width-25>
+                        <img [src]="item.images[0]" style="width: 100%">
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+        </ion-list>
+    </div>
+
+    <ion-infinite-scroll  (ionInfinite)="loadMore($event)">
+        <ion-infinite-scroll-content  loadingSpinner="circles"></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

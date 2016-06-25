@@ -1,0 +1,15 @@
+{
+  "name": "darkionic",
+  "app_id": "",
+  "v2": true,
+  "proxies": [
+    {
+      "path": "/zhihu",
+      "proxyUrl": "http://news-at.zhihu.com/api"
+    },
+    {
+      "path": "/pic",
+      "proxyUrl": "http://pic1.zhimg.com"
+    }
+  ]
+}
